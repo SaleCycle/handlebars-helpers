@@ -363,15 +363,15 @@ describe('string', function() {
       var fn = hbs.compile('{{truncateWords}}');
       assert.equal(fn(), '');
     });
-    it('should return the string if shorter than the specified length.', function() {
+    it('should return the string if shorter than the specified word length.', function() {
       var fn = hbs.compile('{{truncateWords "foo bar baz qux" 3}}');
       assert.equal(fn(), 'foo bar baz…');
     });
-    it('should return the full string if larger than the specified length.', function() {
+    it('should return the full string if larger than the specified word length.', function() {
       var fn = hbs.compile('{{truncateWords "foo bar baz qux" 10}}');
       assert.equal(fn(), 'foo bar baz qux…');
     });
-    it('should return the string at exact the specified length.', function() {
+    it('should return the string at exact the specified word length.', function() {
       var fn = hbs.compile('{{truncateWords "foo bar baz qux" 4}}');
       assert.equal(fn(), 'foo bar baz qux…');
     });
