@@ -352,10 +352,32 @@ describe('string', function() {
       var fn = hbs.compile('{{truncate "foo bar baz qux" 7}}...');
       assert.equal(fn(), 'foo bar...');
     });
-
     it('should return then string truncated by a specified length, providing a custom string to denote an omission.', function() {
       var fn = hbs.compile('{{truncate "foo bar baz qux" 7 "…"}}');
       assert.equal(fn(), 'foo ba…');
+    });
+  });
+
+  describe.only('truncateWords', function() {
+    it('should return an empty string if undefined', function() {
+      var fn = hbs.compile('{{truncateWords}}');
+      assert.equal(fn(), '');
+    });
+    it('should return the string if shorter than the specified length.', function() {
+      var fn = hbs.compile('{{truncateWords "foo bar baz qux" 3}}');
+      assert.equal(fn(), 'foo bar baz…');
+    });
+    it('should return the full string if larger than the specified length.', function() {
+      var fn = hbs.compile('{{truncateWords "foo bar baz qux" 10}}');
+      assert.equal(fn(), 'foo bar baz qux…');
+    });
+    it('should return the string at exact the specified length.', function() {
+      var fn = hbs.compile('{{truncateWords "foo bar baz qux" 4}}');
+      assert.equal(fn(), 'foo bar baz qux…');
+    });
+    it('should return the string truncated by a specified word length, providing a custom string to denote an omission.', function() {
+      var fn = hbs.compile('{{truncateWords "foo bar baz qux" 3 "..."}}');
+      assert.equal(fn(), 'foo bar baz...');
     });
   });
 
