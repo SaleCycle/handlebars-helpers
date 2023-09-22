@@ -358,7 +358,7 @@ describe('string', function() {
     });
   });
 
-  describe.only('truncateWords', function() {
+  describe('truncateWords', function() {
     it('should return an empty string if undefined', function() {
       var fn = hbs.compile('{{truncateWords}}');
       assert.equal(fn(), '');
