@@ -378,9 +378,9 @@ Visit the: [code](lib/string.js) | [unit tests](test/string.js) | [issues](https
 * **[trimLeft](#trimLeft)** ([code](lib/string.js#L639) | [no tests])
 * **[trimRight](#trimRight)** ([code](lib/string.js#L657) | [no tests])
 * **[truncate](#truncate)** ([code](lib/string.js#L680) | [tests](test/string.js#L338))
-* **[truncateWords](#truncateWords)** ([code](lib/string.js#L712) | [no tests])
+* **[truncateWords](#truncateWords)** ([code](lib/string.js#L712) | [tests](test/string.js#L361))
 * **[upcase](#upcase)** ([code](lib/string.js#L742) | [no tests])
-* **[uppercase](#uppercase)** ([code](lib/string.js#L763) | [tests](test/string.js#L362))
+* **[uppercase](#uppercase)** ([code](lib/string.js#L763) | [tests](test/string.js#L384))
 
 ### [url helpers](#url)
 
